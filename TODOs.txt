@@ -1,0 +1,16 @@
+## TODOs & Wishlist ##
+
+Current version.
+
+> Implement graphical user interface (GUI).
+    > Probably using ThorPy.
+
+
+
+Future Improvements.
+
+> Simulation algorithms:
+    > Add a faster generation calculation for toroidal universes.
+
+> Interface:
+    > Improve graphical user interface (GUI).

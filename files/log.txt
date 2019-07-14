@@ -1,0 +1,14 @@
+Log file.
+
+
+------------------------- Conway's Game of Life with colors -------------------------
+time-->	2019-07-11 09:21:17.452313
+full screen-->	     False
+screen size-->	[1700, 959]
+speed-->	       400
+toroidal universe-->	     False
+one color-->	     False
+cell size-->	        10
+dimensions-->	Size(w=137, h=90)
+-----------------------------------------------------------------------------------
+
