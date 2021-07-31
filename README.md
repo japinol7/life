@@ -167,7 +167,7 @@
                             clean or reset the universe, change full/normal screen...
                             Also, you must press ESC or Quit 4 times to exit the life game.
                             Also, activates start immediately flag.
-	                        This option it is useful for benchmark purposes and more.
+	                        This option is useful for benchmark purposes and more.
 	  -j, 			--exitauto
 	                        exit immediately if the automatic mode is on.
 	  -p STOPAFTER, --stopafter STOPAFTER
@@ -242,6 +242,8 @@
         $ python -m life
         $ python -m life --startimmediately
         $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100"
+        $ python -m life --seeds "glider 10 10, glider 15 40, clock 15 65, glider 20 80, glider 25 105, glider 25 130" --toroidaluniverse --auto
+        $ python -m life --seeds "circle_of_fire 22 40, glider 20 80, glider 25 105, spaceship_25p3h1v0.1 40 90, spaceship_25p3h1v0.1 70 70, glider 1 1" --toroidaluniverse --auto
         $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --stopafter 400 --savetofile --auto
         $ python -m life --stopafter 240 --savetofile --timeinoutfile --auto
         $ python -m life --stopafter 240 --toroidaluniverse --savetofile --timeinoutfile --auto
