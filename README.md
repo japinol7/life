@@ -273,10 +273,8 @@
 	Do this:
 	    1. Clone this repository.
 	    2. Go to its folder in your system.
-	    3. $ python -m life
-
-    If you need to install pygame library just do it this way. Try:
-	    $ pip install pygame
+	    3. $ pip install -r requirements.txt
+	    4. $ python -m life
 
 
 **To install Life as an app in your system**
@@ -284,7 +282,8 @@
 	Do this:
 	    1. Clone this repository.
 	    2. Go to its folder in your system.
-	    3. $ pip install .
+	    3. $ pip install -r requirements.txt
+	    4. $ pip install .
 
 	Now you can execute life this way:
 	    $ life
