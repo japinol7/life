@@ -215,7 +215,7 @@ class Universe(pg.sprite.Sprite):
         in a non-toroidal universe.
         This is a faster method that takes advantage of numpy.
         """
-        # Calculate the number of neighbors in a non toroidal universe
+        # Calculate the number of neighbors in a non-toroidal universe
         rule_of_life_alive = np.zeros(8 + 1, np.uint8)
         rule_of_life_dead = np.zeros(8 + 1, np.uint8)
         # If it is alive and has less than 2 neighbors, it dies by under-population.
@@ -229,7 +229,8 @@ class Universe(pg.sprite.Sprite):
         neighborhoods = Universe._grid_n_dims(self.cells)
         sum_over = tuple(-(i+1) for i in range(self.n_dims))
         neighbors_no = np.sum(neighborhoods, sum_over) - self.cells_slice
-        self.cells_slice[:] = np.where(self.cells_slice, rule_of_life_alive[neighbors_no],
+        self.cells_slice[:] = np.where(self.cells_slice,
+                                       rule_of_life_alive[neighbors_no],
                                        rule_of_life_dead[neighbors_no])
 
     def _calculate_generation_toroidal_with_loop(self, cells_old):
@@ -257,7 +258,7 @@ class Universe(pg.sprite.Sprite):
         """
         for x, rows in enumerate(cells_old):
             for y, _ in enumerate(rows):
-                # Calculate the number of neighbors in a no toroidal universe
+                # Calculate the number of neighbors in a non-toroidal universe
                 neighbors_no = np.sum(cells_old[x - 1: x + 2, y - 1: y + 2]) - cells_old[x, y]
                 if cells_old[x, y] and not 2 <= neighbors_no <= 3:
                     # If it is alive and has less than 2 neighbors, it dies by under-population.
