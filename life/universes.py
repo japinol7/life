@@ -211,10 +211,10 @@ class Universe(pg.sprite.Sprite):
                 del self.cells_board[key]
 
     def _calculate_generation_fast(self, _):
-        '''Calculates the next generation for each cell
-           in a non toroidal universe.
-           This is a faster method that takes advantage of numpy.
-        '''
+        """Calculates the next generation for each cell
+        in a non-toroidal universe.
+        This is a faster method that takes advantage of numpy.
+        """
         # Calculate the number of neighbors in a non toroidal universe
         rule_of_life_alive = np.zeros(8 + 1, np.uint8)
         rule_of_life_dead = np.zeros(8 + 1, np.uint8)
@@ -226,18 +226,18 @@ class Universe(pg.sprite.Sprite):
         rule_of_life_dead[3] = 1
 
         # Calculate the neighborhoods and apply the rules
-        neighborhoods = self._grid_n_dims(self.cells)
+        neighborhoods = Universe._grid_n_dims(self.cells)
         sum_over = tuple(-(i+1) for i in range(self.n_dims))
         neighbors_no = np.sum(neighborhoods, sum_over) - self.cells_slice
         self.cells_slice[:] = np.where(self.cells_slice, rule_of_life_alive[neighbors_no],
                                        rule_of_life_dead[neighbors_no])
 
     def _calculate_generation_toroidal_with_loop(self, cells_old):
-        '''Calculates the next generation for each cell
-           in a toroidal universe.
-        '''
+        """Calculates the next generation for each cell
+        in a toroidal universe.
+        """
         cells_ne = cells_old.copy()
-        cells_ne = self._neighborhood(cells_ne)
+        cells_ne = Universe._neighborhood(cells_ne)
         for x, rows in enumerate(cells_old):
             for y, _ in enumerate(rows):
                 if cells_old[x, y] and not 2 <= cells_ne[x, y] <= 3:
@@ -250,11 +250,11 @@ class Universe(pg.sprite.Sprite):
                     self.cells[x, y] = 1
 
     def _calculate_generation_with_loop(self, cells_old):
-        '''Calculates the next generation for each cell
-           in a non toroidal universe.
-           This is a slower method than the one used.
-           It can be used to test faster methods.
-        '''
+        """Calculates the next generation for each cell
+        in a non-toroidal universe.
+        This is a slower method than the one used.
+        It can be used to test faster methods.
+        """
         for x, rows in enumerate(cells_old):
             for y, _ in enumerate(rows):
                 # Calculate the number of neighbors in a no toroidal universe
@@ -268,10 +268,11 @@ class Universe(pg.sprite.Sprite):
                     # Also, if it is dead, a new cell is born by reproduction.
                     self.cells[x, y] = 1
 
-    def _grid_n_dims(self, arr):
-        '''Calculates a sub-array for a given array and return it with a customized shape,
-           so we can get the neighborhoods of a cell.
-        '''
+    @staticmethod
+    def _grid_n_dims(arr):
+        """Calculates a sub-array for a given array and return it with a customized shape,
+        so we can get the neighborhoods of a cell.
+        """
         assert all(_len > 2 for _len in arr.shape)
         n_dims = len(arr.shape)
         new_shape = [_len - 2 for _len in arr.shape]
@@ -280,11 +281,12 @@ class Universe(pg.sprite.Sprite):
         # Return the sub-array with our neighborhoods and a convenient way to move through them
         return as_strided(arr, shape=new_shape, strides=new_strides)
 
-    def _neighborhood(self, arr):
-        '''Calculates the number of neighbors for each cell of a toroidal array.
-           To do so, it rotates the array in each direction.
-           Returns and array with this information.
-        '''
+    @staticmethod
+    def _neighborhood(arr):
+        """Calculates the number of neighbors for each cell of a toroidal array.
+        To do so, it rotates the array in each direction.
+        Returns and array with this information.
+        """
         return (np.roll(np.roll(arr, 1, 1), 1, 0) +  # Top, left
                 np.roll(arr, 1, 0) +  # Top
                 np.roll(np.roll(arr, -1, 1), 1, 0) +  # Top, right
