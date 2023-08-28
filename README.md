@@ -23,10 +23,10 @@
 	author_gitHub: japinol7
 	author_twitter: @japinol
 	requirements: pygame
-	Python requires: 3.6 or greater.
+	Python requires: 3.9 or greater.
 	Python versions tested: 
-            3.7.3  64bits under Windows 10
             3.9.12 64bits under Windows 10
+            3.11.4 64bits under Windows 11
 
 ## Screenshots
 
@@ -63,11 +63,8 @@
 
 ## Recommended reading
 
-	Conway's Game of Life in Wikipedia:
-		[Wikipedia](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
-
-	Peter Norvig's explanation using a Jupyter Notebook:
-		[Norvig](https://nbviewer.jupyter.org/url/norvig.com/ipython/Life.ipynb)
+* [Conway's Game of Life in Wikipedia](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+* [Peter Norvig's explanation using a Jupyter Notebook](https://nbviewer.jupyter.org/url/norvig.com/ipython/Life.ipynb)
 
 
 ## Keyboard keys
