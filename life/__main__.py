@@ -11,8 +11,14 @@ import pygame as pg
 
 from life import constants as consts
 from life.life_game import Game
-from life.settings import SCREEN_MIN_WIDTH, SCREEN_MIN_HEIGHT, SCREEN_MAX_WIDTH, SCREEN_MAX_HEIGHT, \
-                          CELL_MIN_SIZE, CELL_MAX_SIZE
+from life.settings import (
+    SCREEN_MIN_WIDTH,
+    SCREEN_MIN_HEIGHT,
+    SCREEN_MAX_WIDTH,
+    SCREEN_MAX_HEIGHT,
+    CELL_MIN_SIZE,
+    CELL_MAX_SIZE,
+    )
 from life.seeds import seeds
 from tests.test_life import TestLife
 
@@ -150,4 +156,6 @@ def main():
 
 
 if __name__ == '__main__':
+    logger.info(consts.LOG_START_APP_MSG)
     main()
+    logger.info(consts.LOG_END_APP_MSG)

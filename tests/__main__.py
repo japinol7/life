@@ -12,10 +12,14 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 
-if __name__ == '__main__':
+def main():
     try:
         test_life = TestLife()
         test_life.main()
     except Exception as e:
         traceback.print_tb(e.__traceback__)
         logger.critical(f'Error: {e}')
+
+
+if __name__ == '__main__':
+    main()

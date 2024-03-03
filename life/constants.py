@@ -4,8 +4,13 @@ __author__ = 'Joan A. Pinol  (japinol)'
 import os
 import sys
 
+from life.version import version
 
 LOGGER_FORMAT = '%(asctime)s %(levelname)s %(name)s: %(message)s'
+
+APP_NAME = 'life'
+LOG_START_APP_MSG = f"Start app {APP_NAME} version: {version.get_version()}"
+LOG_END_APP_MSG = f"End app {APP_NAME}"
 
 
 # If the code is frozen, use this path:
