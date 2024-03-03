@@ -22,11 +22,8 @@
 	author_nickname: japinol
 	author_gitHub: japinol7
 	author_twitter: @japinol
-	requirements: pygame
-	Python requires: 3.9 or greater.
-	Python versions tested: 
-            3.9.12 64bits under Windows 10
-            3.11.5 64bits under Windows 11
+	Python requires: 3.11 or greater.
+
 
 ## Screenshots
 
