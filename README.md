@@ -234,6 +234,26 @@
         debugtraces      	False
 
 
+**To execute the test suite**
+
+	Do this:
+	    1. Go to the life folder in your system where you have cloned this repository.
+	    2. $ python -m life --testsuite
+
+	Or this:
+	    1. Go to the life folder in your system where you have cloned this repository.
+	    2. $ python -m tests
+
+    
+	This will calculate the first 550 generations of these 4 universes:
+	    * A flat universe starting with the default seeds (see "default optional arguments" above).
+	    * A toroidal universe starting with the default seeds (see "default optional arguments" above).
+	    * A flat universe starting with the seed:
+            gosper_glider_gun 7 20, clock 75 100.
+	    * A toroidal universe starting with the seed:
+            gosper_glider_gun 7 20, clock 75 100.
+
+
 **Examples of usage**
 
 	If Life has not been installed as an app:
@@ -272,36 +292,3 @@
 	    2. Go to its folder in your system.
 	    3. $ pip install -r requirements.txt
 	    4. $ python -m life
-
-
-**To install Life as an app in your system**
-
-	Do this:
-	    1. Clone this repository.
-	    2. Go to its folder in your system.
-	    3. $ pip install -r requirements.txt
-	    4. $ pip install .
-
-	Now you can execute life this way:
-	    $ life
-	    $ life --seeds "gosper_glider_gun 7 20, clock 75 100" --startimmediately --stopafter 550
-    
-
-**To execute the test suite**
-
-	Do this:
-	    1. Go to the life folder in your system where you have cloned this repository.
-	    2. $ python -m life --testsuite
-
-	Or this:
-	    1. Go to the life folder in your system where you have cloned this repository.
-	    2. $ python -m tests
-
-    
-	This will calculate the first 550 generations of these 4 universes:
-	    * A flat universe starting with the default seeds (see "default optional arguments" above).
-	    * A toroidal universe starting with the default seeds (see "default optional arguments" above).
-	    * A flat universe starting with the seed:
-            gosper_glider_gun 7 20, clock 75 100.
-	    * A toroidal universe starting with the seed:
-            gosper_glider_gun 7 20, clock 75 100.
