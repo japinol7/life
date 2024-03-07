@@ -36,7 +36,7 @@ def main():
                             usage="%(prog)s [-h] [-c CELLSIZE] [-m] [-o] [-u] [-w WIDTHSCREEN]\n"
                             f"{' '*12}[-e HEIGHTSCREEN] [-f] [-s SPEED] [-n] [-i] [-k SEEDS]\n"
                             f"{' '*12}[-v OUTFILE] [-x] [-l LOGFILE] [-a] [-j] [-p STOPAFTER]\n"
-                            f"{' '*12}[-y] [-z] [-zz] [-t] [-ts]\n")
+                            f"{' '*12}[-y] [-z] [-zz] [-uu] [-t] [-ts]\n")
     parser.add_argument('-c', '--cellsize', default=None,
                         help='the size of each cell. '
                              f'Must be between {CELL_MIN_SIZE} and {CELL_MAX_SIZE}.')
@@ -94,6 +94,11 @@ def main():
     parser.add_argument('-zz', '--statsnogui', default=False, action='store_true',
                         help='even if statistics are activated, do not reflect the middle '
                              'calculations on the GUI. Only draw the last one.')
+    parser.add_argument('-uu', '--nodisplayscaled', default=False, action='store_true',
+                        help='Remove the scaling of the game screen. '
+                             'Resolution depends on desktop size and scale graphics. '
+                             'Note that Pygame scaled is considered an experimental API '
+                             'and is subject to change.')
     parser.add_argument('-t', '--debugtraces', default=False, action='store_true',
                         help='show debug back traces information when something goes wrong.')
     parser.add_argument('-ts', '--testsuite', default=False, action='store_true',
@@ -137,6 +142,7 @@ def main():
                         stats_deactivated=args.statsoff,
                         stats_no_middle_calc_gui=args.statsnogui,
                         speed=args.speed,
+                        is_no_display_scaled=args.nodisplayscaled,
                         exit_auto_when_auto_play=args.exitauto)
             if not Game.is_exit_game:
                 game.start()

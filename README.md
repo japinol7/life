@@ -175,6 +175,11 @@
 	  -zz, 			--statsnogui
 	                        even if statistics are activated, do not reflect the middle
                             calculations on the GUI. Only draw the last one.
+	  -uu, 			--nodisplayscaled
+	                        Deactivate the scaling of the game screen. 
+	                        Resolution depends on desktop size and scale graphics. 
+	                        Note that Pygame scaled is considered an experimental API 
+	                        and is subject to change.
 	  -t, 			--debugtraces
 	                        show debug back traces information when something goes wrong.
 	  -ts, 			--testsuite
@@ -228,6 +233,7 @@
         timeinoutfile    	False
         statsoff         	False
         statsnogui       	False
+        nodisplayscaled     False
         debugtraces      	False
 
 

@@ -51,6 +51,7 @@ class Game:
                  stats_deactivated=False,
                  stats_no_middle_calc_gui=False,
                  speed=None,
+                 is_no_display_scaled=None,
                  exit_auto_when_auto_play=False):
         self.name = "Life v 1.01"
         self.name_short = "Life"
@@ -109,12 +110,9 @@ class Game:
                                         exit_auto_when_auto_play=exit_auto_when_auto_play)
             # Set screen to the settings configuration
             Game.size = [Settings.screen_width, Settings.screen_height]
-            Game.full_screen_flags = pg.FULLSCREEN | pg.DOUBLEBUF | pg.HWSURFACE
-            Game.normal_screen_flags = pg.DOUBLEBUF | pg.HWSURFACE
-            if Settings.is_full_screen:
-                Game.screen_flags = Game.full_screen_flags
-            else:
-                Game.screen_flags = Game.normal_screen_flags
+            Game.full_screen_flags = pg.FULLSCREEN if is_no_display_scaled else pg.FULLSCREEN | pg.SCALED
+            Game.normal_screen_flags = pg.SHOWN if is_no_display_scaled else pg.SHOWN | pg.SCALED
+            Game.screen_flags = Game.full_screen_flags if Settings.is_full_screen else Game.normal_screen_flags
             Game.screen = pg.display.set_mode(Game.size, Game.screen_flags)
             # Load and render resources
             Resource.load_and_render_background_images()
