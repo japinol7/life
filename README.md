@@ -106,7 +106,7 @@
 	life [-h] [-c CELLSIZE] [-m] [-o] [-u] [-w WIDTHSCREEN]
 	     [-e HEIGHTSCREEN] [-f] [-s SPEED] [-n] [-i] [-k SEEDS]
 	     [-v OUTFILE] [-x] [-l LOGFILE] [-a] [-j] [-p STOPAFTER]
-         [-y] [-z] [-zz] [-t] [-ts]
+         [-y] [-z] [-zz] [-uu] [-t] [-ts]
 	
 	optional arguments:
 	  -h, --help            show this help message and exit
