@@ -91,9 +91,9 @@ def map_color_num_to_name_txt(color):
 
 def time_it(func, *args, **kwargs):
     """Benchmarks a given function."""
-    start = time.time()
+    start = time.perf_counter()
     res = func(*args, **kwargs)
-    print(f'{func.__name__} t: {time.time() - start:.{8}f} s')
+    print(f'{func.__name__} t: {time.perf_counter() - start:.{8}f} s')
     return res
 
 
@@ -101,8 +101,8 @@ def time_it_dec(func):
     """Benchmarks a given function. It is intended to be used as a decorator."""
     @wraps(func)
     def wrapper(*args, **kwargs):
-        start = time.time()
+        start = time.perf_counter()
         res = func(*args, **kwargs)
-        print(f'{func.__name__} t: {time.time() - start:.8f} s')
+        print(f'{func.__name__} t: {time.perf_counter() - start:.8f} s')
         return res
     return wrapper
