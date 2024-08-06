@@ -3,13 +3,13 @@ from setuptools import setup
 setup(
     name='life',
     author='Joan A. Pinol  (japinol)',
-    version='1.0.1',
+    version='1.0.2',
     license='MIT',
     description='John Conway\'s Game of Life.',
     long_description='John Conway\'s Game of Life.',
     url='https://github.com/japinol7/life',
     packages=['life', 'tests'],
-    python_requires='>=3.11',
+    python_requires='>=3.12',
     install_requires=['pygame-ce'],
     entry_points={
         'console_scripts': [

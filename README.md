@@ -16,13 +16,13 @@
 		By default uses colors to represent the first 8 generations of a cell alive.
 		The user can choose between two representations of a universe: toroidal or flat. 
 	program: life
-	version: 1.0.1
+	version: 1.0.2
 	language: English
 	author: Joan A. Pinol
 	author_nickname: japinol
 	author_gitHub: japinol7
 	author_twitter: @japinol
-	Python requires: 3.11 or greater.
+	Python requires: 3.12 or greater.
 
 
 ## Screenshots
