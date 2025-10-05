@@ -1,6 +1,6 @@
 """Module __main__. Entry point."""
 __author__ = 'Joan A. Pinol  (japinol)'
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 from argparse import ArgumentParser
 import gc
@@ -24,7 +24,7 @@ from tests.test_life import TestLife
 
 
 logging.basicConfig(format=consts.LOGGER_FORMAT)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('life')
 logger.setLevel(logging.DEBUG)
 
 

@@ -1,6 +1,7 @@
 """Module universes."""
 __author__ = 'Joan A. Pinol  (japinol)'
 
+import warnings
 from random import randint
 
 import numpy as np
@@ -179,17 +180,20 @@ class Universe(pg.sprite.Sprite):
 
     def _cells_board_update_with_stats(self, cells_old):
         """Change the graphic cells on the board according to the array of cells.
-        Also calculates statistics for total age dead cells and cells currently alive.
+        Also calculates statistics for the total age of dead cells and cells
+        currently alive.
         """
         for i, rows in enumerate(self.cells):
             for j, cell in enumerate(rows):
                 cell_board = self.cells_board.get((j, i))
                 if cell_board:
                     if cell == 1 and cells_old[i, j] == 1:
-                        self.stats[f'cells_age{cell_board.age}'] -= 1
-                        cell_board.age = min(cell_board.age + 1, Cell.CELL_AGES_MAX - 1)
-                        cell_board.age_total += 1
-                        self.stats[f'cells_age{cell_board.age}'] += 1
+                        with warnings.catch_warnings():
+                            warnings.simplefilter("ignore", RuntimeWarning)
+                            self.stats[f'cells_age{cell_board.age}'] -= 1
+                            cell_board.age = min(cell_board.age + 1, Cell.CELL_AGES_MAX - 1)
+                            cell_board.age_total += 1
+                            self.stats[f'cells_age{cell_board.age}'] += 1
                     else:
                         if not cell and cells_old[i, j] == 1:
                             self.stats['cells_total'] -= 1

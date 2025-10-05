@@ -16,7 +16,7 @@
 		By default uses colors to represent the first 8 generations of a cell alive.
 		The user can choose between two representations of a universe: toroidal or flat. 
 	program: life
-	version: 1.0.3
+	version: 1.0.4
 	language: English
 	author: Joan A. Pinol
 	author_nickname: japinol

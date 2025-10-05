@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='life',
     author='Joan A. Pinol  (japinol)',
-    version='1.0.3',
+    version='1.0.4',
     license='MIT',
     description='John Conway\'s Game of Life.',
     long_description='John Conway\'s Game of Life.',
