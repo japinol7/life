@@ -156,8 +156,9 @@
 	  -j, 			--exitauto
 	                        exit immediately if the automatic mode is on.
 	  -p STOPAFTER, --stopafter STOPAFTER
-	                        change the speed of each generation.
-	                        It will calculate a generation every N nanoseconds if possible.
+	                        stop after the STOPAFTER generation.
+	                        ex: '-p 50' -> will generate the first 50 generations, then it will stop.
+	                        If not in auto mode, you can still continue generating next generations.
 	  -y, 			--timeinoutfile
 	                        save current time in output file for each generation.
 	  -z, 			--statsoff
