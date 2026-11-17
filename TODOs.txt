@@ -1,11 +1,5 @@
 ## TODOs & Wishlist ##
 
-Current version.
-
-> Implement graphical user interface (GUI).
-    > Probably using ThorPy.
-
-
 
 Future Improvements.
 
@@ -14,3 +8,4 @@ Future Improvements.
 
 > Interface:
     > Improve graphical user interface (GUI).
+      > Maybe using pygame-gui.

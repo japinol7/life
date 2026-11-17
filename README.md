@@ -1,13 +1,3 @@
-## Warning - Development version. GUI under construction
-
-	TODO: Implement graphical user interface (GUI) elements:
-            * Buttons, check boxes and list boxes.
-	      It will be implemented using ThorPy, probably.
-
-	So, for the moment you will have to use the keyboard keys and the line command parameters.
-	Apart from these GUI elements, this version is fully operational.
-
-
 ## Life
 
 	Conway's Game of Life with colors.
@@ -274,18 +264,11 @@
         $ python -m life --seeds "glider 10 10, glider 15 40, clock 15 65, glider 20 80, glider 25 105, glider 25 130" --stopafter 400 --toroidaluniverse --savetofile --timeinoutfile --auto
 
 
-    File paths used in the below examples are for Linux systems. Change them according to your OS:
-        $ python -m life --stopafter 550 --auto --savetofile --outfile "~/life/life_out.txt" --logfile "~/life/life_log.txt" --statsnogui
-        $ python -m life --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "~/life/life_out.txt" --logfile "~/life/life_log.txt" --statsnogui
-        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --stopafter 550 --auto --savetofile --outfile "~/life/life_out.txt" --logfile "~/life/life_log.txt" --statsnogui
-        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "~/life/life_out.txt" --logfile "~/life/life_log.txt" --statsnogui
-
-
-    File paths used in the below examples are for Windows systems. Change them according to your OS:
-        $ python -m life --stopafter 550 --auto --savetofile --outfile "f:\life_out.txt" --logfile "f:\life_log.txt" --statsnogui
-        $ python -m life --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "f:\life_out.txt" --logfile "f:\life_log.txt" --statsnogui
-        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --stopafter 550 --auto --savetofile --outfile "f:\life_out.txt" --logfile "f:\life_log.txt" --statsnogui
-        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "f:\life_out.txt" --logfile "f:\life_log.txt" --statsnogui
+    Some more examples, writing out file and logs to specified file names:
+        $ python -m life --stopafter 550 --auto --savetofile --outfile "life_out.txt" --logfile "life_log.txt" --statsnogui
+        $ python -m life --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "life_out.txt" --logfile "life_log.txt" --statsnogui
+        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --stopafter 550 --auto --savetofile --outfile "life_out.txt" --logfile "life_log.txt" --statsnogui
+        $ python -m life --seeds "gosper_glider_gun 7 20, clock 75 100" --toroidaluniverse --stopafter 550 --auto --savetofile --outfile "life_out.txt" --logfile "life_log.txt" --statsnogui
 
 
 **To make Life work**
@@ -295,3 +278,5 @@
 	    2. Go to its folder in your system.
 	    3. $ pip install -r requirements.txt
 	    4. $ python -m life
+	    5. Note: Press ESC or close the 'Life' program window to quit.
+	       * If auto mode is activated, you must press ESC or Quit 4 times.
