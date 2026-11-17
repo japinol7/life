@@ -12,7 +12,7 @@
 	author_nickname: japinol
 	author_gitHub: japinol7
 	author_twitter: @japinol
-	Python requires: 3.14 or greater.
+	Python requires: 3.15 or greater.
 
 
 ## Screenshots

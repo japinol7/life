@@ -9,7 +9,7 @@ setup(
     long_description='John Conway\'s Game of Life.',
     url='https://github.com/japinol7/life',
     packages=['life', 'tests'],
-    python_requires='>=3.14',
+    python_requires='>=3.15',
     install_requires=['pygame-ce'],
     entry_points={
         'console_scripts': [
